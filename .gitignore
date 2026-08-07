@@ -1,0 +1,6 @@
+backup/
+build/
+
+*.exe
+*.obj
+*.pdb
