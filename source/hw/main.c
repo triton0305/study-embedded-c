@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include "app.h"
 
 int main(int argc, char const *argv[])
 {
-    printf("Hello CMake!\n");
+    appInit();
+
+    appMain();
     return 0;
 }

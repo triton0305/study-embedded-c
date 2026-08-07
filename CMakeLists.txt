@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(msvc_cli C)
+project(msvc_cli C) # 중요!
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED)
@@ -15,9 +15,9 @@ include_directories(
 
 file(GLOB_RECURSE SOURCES
     "source/*.c"
-)
+) # 중요!
 
-add_executable(msvc_cli ${SOURCES})
+add_executable(msvc_cli ${SOURCES}) # 중요!
 
 
 target_link_libraries(msvc_cli PRIVATE Kernel32 Winmm)
