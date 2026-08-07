@@ -35,7 +35,7 @@ static void cliRedrawTail(void)
 {
     for ( int i = cli_cursor; i< cli_line_idx; i++)
     {
-        cliPrintf("%c", cli_line_buf[i])
+        cliPrintf("%c", cli_line_buf[i]);
     }
 
     cliPrintf(" ");
