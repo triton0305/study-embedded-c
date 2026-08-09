@@ -22,6 +22,8 @@ add_executable(msvc_cli ${SOURCES}) # 중요!
 
 target_link_libraries(msvc_cli PRIVATE Kernel32 Winmm)
 
-target_compile_options(msvc_cli PRIVATE
-    "/utf-8"
-)
+if (MSVC)
+    target_compile_options(msvc_cli PRIVATE
+        "/utf-8"
+    )
+endif()

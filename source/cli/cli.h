@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CLI_H
+#define CLI_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -20,3 +21,5 @@ void cliAdd(char * cmd_str, void (*cmd_func)(uint8_t argc, char * argv[]));
 void cliSetCtrlHandler(cli_callback_t handler);
 
 // command line interface
+
+#endif

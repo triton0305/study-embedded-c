@@ -1,9 +1,10 @@
 //#pragma once
-#ifndef __APP__H__
-#define __APP__H__
+#ifndef APP_H
+#define APP_H
 
 
 void appInit(void);
 void appMain(void);
 
 #endif
+
