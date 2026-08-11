@@ -113,8 +113,8 @@ void swarAlgorithm(uint32_t data)
 
 void builtIn(uint32_t data)
 {
-    int temp = __popcnt(data);
-    printf("\t[Built-in]  : %d\r\n", temp);
+    unsigned int temp = __popcnt(data);
+    printf("\t[Built-in]  : %u\r\n", temp);
 }
 
 void linePrint(void)
