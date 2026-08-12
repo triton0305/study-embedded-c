@@ -90,7 +90,6 @@ void rightRun(rotateTest*data)
 
 rotateTest leftShifter(rotateTest data)
 {
-
     data.rot_cnt %= BIT_WIDTH;
     if (data.rot_cnt == 0) return data;
     data.input = ((data.input)<<(data.rot_cnt))|((data.input)>>(BIT_WIDTH-data.rot_cnt));
@@ -99,7 +98,6 @@ rotateTest leftShifter(rotateTest data)
 
 rotateTest rightShifter(rotateTest data)
 {
-
     data.rot_cnt %= BIT_WIDTH;
     if (data.rot_cnt == 0) return data;
     data.input = ((data.input)>>(data.rot_cnt))|((data.input)<<(BIT_WIDTH-data.rot_cnt));
