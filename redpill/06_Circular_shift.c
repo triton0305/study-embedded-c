@@ -11,10 +11,9 @@ typedef struct{
 
 void printInit (void);
 void printBinary(uint32_t data);
-void printPrologue(test data);
+void printLogue(test data);
 void rotateRight(test* data);
 void rotateLeft(test* data);
-
 
 int main (int agrc, char const * argv [])
 {
@@ -29,7 +28,7 @@ int main (int agrc, char const * argv [])
         .index = 2,
         .rot_cnt = 8
     };
-    printPrologue(firstTest);
+    printLogue(firstTest);
     rotateRight(&secondTest);
 
     return 0;
@@ -51,7 +50,7 @@ void printBinary(uint32_t data)
     printf("\r\n");
 }
 
-void printPrologue(test data)
+void printLogue(test data)
 {   
     printf("[Init]   Hex: 0x%08X\r\n         Bin: ", data.input);
     printBinary(data.input);
