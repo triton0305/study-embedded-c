@@ -43,7 +43,7 @@ int main (void)
 }
 void swap(void*a, void *b, size_t size)
 {
-    if(a == NULL || b == NULL || size == 0) return ;
+    if(a==b||a == NULL || b == NULL || size == 0) return ;
     for (size_t i = 0; i < size ; i++)
     {
         uint8_t temp;
