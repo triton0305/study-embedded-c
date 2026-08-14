@@ -1,22 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main (void)
 {
     size_t row = 3;
     size_t col = 4;
-    int * arr = malloc (row * col * sizeof(*arr));
+    int *arr = NULL;
+    int **ptr = NULL;
+
+    if (row == 0 || col == 0) return 1;
+    if (row > SIZE_MAX / col / sizeof(*arr)) return 1;
+    if (row > SIZE_MAX / sizeof(*ptr)) return 1;
+
+    arr = malloc (row * col * sizeof(*arr));
     if (arr == NULL) return 1;
-    int ** ptr = malloc(row * sizeof(*ptr));
+    ptr = malloc(row * sizeof(*ptr));
     if (ptr == NULL)
     {   
         free(arr);
         return 1;
     }
-//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+//=================================================================
+
     for (size_t i =  0; i < (row*col) ; i++) *(arr+i) = (int)(i+1); 
     for (size_t i = 0; i < row ; i++) *(ptr+i) = (arr+i*col);
-//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+//=================================================================
+
     printf("=== Day 10: Dynamic 2D Array Allocation ===\r\n\r\n");
     printf("Generated Matrix (%zux%zu):\r\n", row, col);
     for (size_t i = 0 ; i < row; i++) 
@@ -27,6 +39,9 @@ int main (void)
         }
         printf("\r\n");
     }
+
+//=================================================================
+
     for (size_t i = 0 ; i < row ; i++)
     {        
         if(*(ptr+i) == arr+(i*col))
