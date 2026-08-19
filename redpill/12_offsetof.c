@@ -15,7 +15,10 @@ int main(void)
     printf("[Standard] Offset of b: %zu\r\n",offsetof(Sample, b));
     printf("[Standard] Offset of c: %zu\r\n",offsetof(Sample, c));
     printf("\r\n-----------------------------\r\n\r\n");
-    printf("[My Macro] Offset of a: %zu", (size_t)&((Sample*)0)->a);
+    printf("[My Macro] Offset of a: %zu\r\n", (size_t)&((Sample*)0)->a);
+    printf("[My Macro] Offset of b: %zu\r\n", (size_t)&((Sample*)0)->b);
+    printf("[My Macro] Offset of c: %zu\r\n", (size_t)&((Sample*)0)->c);
+    printf("\r\n>> Success! Implementation is correct.\r\n");
 
     return 0;
 }
